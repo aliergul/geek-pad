@@ -8,9 +8,34 @@ import {
   Sheet,
   Typography,
 } from "@mui/joy";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import app from "../../firebase";
 
-const Login = ({ handleLogin }) => {
+const Login = ({ onLogin }) => {
+  const history = useHistory();
+  const auth = getAuth(app);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      signInWithEmailAndPassword(auth, email, password).then(
+        (userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          onLogin();
+          history.push("/");
+          console.log(user);
+          // ...
+        }
+      );
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <main className="grid place-items-center h-screen">
       <CssBaseline />
@@ -42,6 +67,8 @@ const Login = ({ handleLogin }) => {
             name="email"
             type="email"
             placeholder="johndoe@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </FormControl>
         <FormControl>
@@ -51,9 +78,13 @@ const Login = ({ handleLogin }) => {
             name="password"
             type="password"
             placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </FormControl>
-        <Button sx={{ mt: 1 /* margin top */ }}>Log in</Button>
+        <Button sx={{ mt: 1 /* margin top */ }} onClick={handleLogin}>
+          Log in
+        </Button>
         <Typography
           endDecorator={<Link href="/sign-up">Sign up</Link>}
           fontSize="sm"

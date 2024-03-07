@@ -8,28 +8,34 @@ import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
 import { useState } from "react";
 import Login from "./pages/Auth/Login";
+import { useEffect } from "react";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
+  useEffect(() => {
+    const userLoggedIn = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(userLoggedIn);
+  }, []);
 
+  const onLogin = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem("isLoggedIn", true);
+  };
   return (
     <Router>
       <div className="wrapper">
-        <div className="w-full">
-          <Switch>
-            <Route exact path="/login">
-              {isLoggedIn ? (
-                <Redirect to="/" />
-              ) : (
-                <Login onLogin={handleLogin} />
-              )}
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/login">
+            {isLoggedIn ? (
+              <Redirect to="/" />
+            ) : (
+              <div className="w-full">
+                <Login onLogin={onLogin} />
+              </div>
+            )}
+          </Route>
+        </Switch>
         <Route path="/">
           {isLoggedIn ? (
             <>
