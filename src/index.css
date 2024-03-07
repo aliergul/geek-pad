@@ -14,4 +14,9 @@
   .scrollable {
     scroll-behavior: smooth;
   }
+  .wrapper {
+    /* height: calc(100% - theme("spacing.24")); bottom bar eklemek istersen bu kodu kullan*/
+    height: 100%;
+    @apply flex;
+  }
 }
