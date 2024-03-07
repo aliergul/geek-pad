@@ -7,7 +7,7 @@ import { initReactI18next } from "react-i18next";
 export const lang =
   localStorage.getItem("lang") !== null
     ? localStorage.getItem("lang").replace(/["]/g, "")
-    : "en";
+    : "tr";
 
 i18next.use(initReactI18next).init({
   pluralSeparator: true,

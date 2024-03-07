@@ -1,5 +1,11 @@
 {
   "login": {
-    "nickname": "Kullanıcı Adı:"
+    "welcome": "Hoşgeldiniz!",
+    "sign_in": "Devam etmek için giriş yapın.",
+    "email": "E-posta",
+    "password": "Şifre",
+    "login": "Giriş Yap",
+    "no_account": "Hesabınız yok mu?",
+    "sign_up": "Kayıt ol"
   }
 }

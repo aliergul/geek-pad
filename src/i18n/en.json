@@ -1,5 +1,11 @@
 {
   "login": {
-    "nickname": "Username:"
+    "welcome": "Welcome!",
+    "sign_in": "Sign in to continue.",
+    "email": "Email",
+    "password": "Password",
+    "login": "Log in",
+    "no_account": "Don't have an account?",
+    "sign_up": "Sign up"
   }
 }

@@ -13,6 +13,7 @@ import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import app from "../../firebase";
+import i18n from "../../i18n/i18n";
 
 const Login = ({ onLogin }) => {
   const history = useHistory();
@@ -56,12 +57,12 @@ const Login = ({ onLogin }) => {
       >
         <div>
           <Typography level="h4" component="h1">
-            <b>Welcome!</b>
+            <b>{i18n.t("login:welcome")}</b>
           </Typography>
-          <Typography level="body-sm">Sign in to continue.</Typography>
+          <Typography level="body-sm">{i18n.t("login:sign_in")}</Typography>
         </div>
         <FormControl>
-          <FormLabel>Email</FormLabel>
+          <FormLabel>{i18n.t("login:email")}</FormLabel>
           <Input
             // html input attribute
             name="email"
@@ -72,7 +73,7 @@ const Login = ({ onLogin }) => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Password</FormLabel>
+          <FormLabel>{i18n.t("login:password")}</FormLabel>
           <Input
             // html input attribute
             name="password"
@@ -83,14 +84,14 @@ const Login = ({ onLogin }) => {
           />
         </FormControl>
         <Button sx={{ mt: 1 /* margin top */ }} onClick={handleLogin}>
-          Log in
+          {i18n.t("login:login")}
         </Button>
         <Typography
-          endDecorator={<Link href="/sign-up">Sign up</Link>}
+          endDecorator={<Link href="/sign-up">{i18n.t("login:sign_up")}</Link>}
           fontSize="sm"
           sx={{ alignSelf: "center" }}
         >
-          Don&apos;t have an account?
+          {i18n.t("login:no_account")}
         </Typography>
       </Sheet>
     </main>
