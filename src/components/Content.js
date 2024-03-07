@@ -4,11 +4,11 @@ import Home from "../pages/Home/Home";
 import Movies from "../pages/Movies/Movies";
 import Series from "../pages/Series/Series";
 import Games from "../pages/Games/Games";
+import Notepad from "../pages/Notepad/Notepad";
 
 const Content = () => {
   return (
-    <div>
-      xxx
+    <main className="flex-auto overflow-auto">
       <Switch>
         <Route exact path="/">
           <Home />
@@ -29,7 +29,12 @@ const Content = () => {
           <Games />
         </Route>
       </Switch>
-    </div>
+      <Switch>
+        <Route exact path="/notepad">
+          <Notepad />
+        </Route>
+      </Switch>
+    </main>
   );
 };
 

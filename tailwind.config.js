@@ -10,6 +10,8 @@ module.exports = {
       },
       colors: {
         main: "#EDF5E1",
+        sidebar: "#8EE4AF",
+        active: "#5db27f",
       },
     },
   },

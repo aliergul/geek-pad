@@ -5,6 +5,8 @@ import {
   FormLabel,
   Input,
   Link,
+  Option,
+  Select,
   Sheet,
   Typography,
 } from "@mui/joy";
@@ -20,22 +22,29 @@ const Login = ({ onLogin }) => {
   const auth = getAuth(app);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState();
 
-  const handleLogin = async () => {
-    try {
-      signInWithEmailAndPassword(auth, email, password).then(
-        (userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          onLogin();
-          history.push("/");
-          console.log(user);
-          // ...
-        }
-      );
-    } catch (err) {
-      console.error(err);
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        onLogin();
+        history.push("/");
+        console.log(user);
+        // ...
+      })
+      .catch((err) => {
+        setError(i18n.t("login:error"));
+        console.error(err);
+      });
+  };
+
+  const handleLanguage = (event, lang) => {
+    localStorage.setItem("lang", lang);
+    i18n.changeLanguage(lang);
+    window.location.reload(false);
   };
   return (
     <main className="grid place-items-center h-screen">
@@ -83,6 +92,11 @@ const Login = ({ onLogin }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </FormControl>
+        {error && (
+          <Typography color="danger" sx={{ mt: 1 }}>
+            {error}
+          </Typography>
+        )}
         <Button sx={{ mt: 1 /* margin top */ }} onClick={handleLogin}>
           {i18n.t("login:login")}
         </Button>
@@ -93,6 +107,15 @@ const Login = ({ onLogin }) => {
         >
           {i18n.t("login:no_account")}
         </Typography>
+        <Select
+          onChange={handleLanguage}
+          defaultValue={localStorage.getItem("lang") ?? "tr"}
+          size="sm"
+          variant="soft"
+        >
+          <Option value="tr">TR</Option>
+          <Option value="en">EN</Option>
+        </Select>
       </Sheet>
     </main>
   );

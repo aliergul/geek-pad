@@ -6,6 +6,14 @@
     "password": "Şifre",
     "login": "Giriş Yap",
     "no_account": "Hesabınız yok mu?",
-    "sign_up": "Kayıt ol"
+    "sign_up": "Kayıt ol",
+    "error": "Kullanıcı adı veya şifre yanlış."
+  },
+  "tabs": {
+    "home": "Ana Sayfa",
+    "movies": "Film Notları",
+    "series": "Dizi Notları",
+    "games": "Oyun Notları",
+    "notepad": "Serbest Not"
   }
 }

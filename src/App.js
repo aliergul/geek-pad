@@ -36,20 +36,18 @@ function App() {
             )}
           </Route>
         </Switch>
-        <Route path="/">
-          {isLoggedIn ? (
-            <>
-              <div className="w-60">
-                <Sidebar />
-              </div>
-              <div className="w-full">
-                <Content />
-              </div>
-            </>
-          ) : (
-            <Redirect to="/login" />
-          )}
-        </Route>
+        {isLoggedIn ? (
+          <>
+            <div className="w-60 bg-sidebar rounded-lg justify-center flex">
+              <Sidebar />
+            </div>
+            <div className="w-full">
+              <Content />
+            </div>
+          </>
+        ) : (
+          <Redirect to="/login" />
+        )}
       </div>
     </Router>
   );
