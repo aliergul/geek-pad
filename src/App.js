@@ -1,5 +1,8 @@
+import i18n from "./i18n/i18n";
+
 function App() {
-  return <div className="font-source">geek-pad</div>;
+  //i18n.changeLanguage("en");
+  return <div>{i18n.t("login:nickname")}</div>;
 }
 
 export default App;
