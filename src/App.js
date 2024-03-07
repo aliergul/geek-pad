@@ -1,7 +1,5 @@
-import "./App.css";
-
 function App() {
-  return <div className="App"></div>;
+  return <div className="font-source">geek-pad</div>;
 }
 
 export default App;
