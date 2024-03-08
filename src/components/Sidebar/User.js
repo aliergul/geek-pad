@@ -4,6 +4,7 @@ import i18n from "../../i18n/i18n";
 import app from "../../firebase";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const User = () => {
   const auth = getAuth(app);
@@ -37,7 +38,10 @@ const User = () => {
       <div className="text-center m-3">
         <Typography>{email}</Typography>
       </div>
-      <div className="mb-10 flex justify-center">
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        className="mb-10 flex justify-center"
+      >
         <Button
           variant="solid"
           size="sm"
@@ -47,7 +51,7 @@ const User = () => {
         >
           {i18n.t("user:logout")}
         </Button>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -16,6 +16,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import app from "../../firebase";
 import i18n from "../../i18n/i18n";
+import { motion } from "framer-motion";
 
 const Login = ({ onLogin }) => {
   const history = useHistory();
@@ -57,7 +58,11 @@ const Login = ({ onLogin }) => {
 
   return (
     render && (
-      <main className="grid place-items-center h-screen">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="grid place-items-center h-screen"
+      >
         <CssBaseline />
         <Sheet
           sx={{
@@ -129,7 +134,7 @@ const Login = ({ onLogin }) => {
             <Option value="en">EN</Option>
           </Select>
         </Sheet>
-      </main>
+      </motion.main>
     )
   );
 };

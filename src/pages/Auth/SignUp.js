@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import app from "../../firebase";
 import { Box, Snackbar } from "@mui/material";
+import { motion } from "framer-motion";
 
 const SignUp = () => {
   const history = useHistory();
@@ -44,7 +45,11 @@ const SignUp = () => {
   };
 
   return (
-    <main className="grid place-items-center h-screen">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="grid place-items-center h-screen"
+    >
       <CssBaseline />
       <Sheet
         sx={{
@@ -118,7 +123,7 @@ const SignUp = () => {
           message={i18n.t("signup:success")}
         />
       </Box>
-    </main>
+    </motion.main>
   );
 };
 
