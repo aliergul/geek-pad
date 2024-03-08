@@ -15,5 +15,8 @@
     "series": "Series Notes",
     "games": "Game Notes",
     "notepad": "Free Notes"
+  },
+  "user": {
+    "logout": "Logout"
   }
 }

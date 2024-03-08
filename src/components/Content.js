@@ -8,7 +8,7 @@ import Notepad from "../pages/Notepad/Notepad";
 
 const Content = () => {
   return (
-    <main className="flex-auto overflow-auto">
+    <main className="flex-auto">
       <Switch>
         <Route exact path="/">
           <Home />

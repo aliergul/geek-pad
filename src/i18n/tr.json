@@ -15,5 +15,8 @@
     "series": "Dizi Notları",
     "games": "Oyun Notları",
     "notepad": "Serbest Not"
+  },
+  "user": {
+    "logout": "Çıkış Yap"
   }
 }

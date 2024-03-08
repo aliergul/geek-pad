@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const userLoggedIn = localStorage.getItem("isLoggedIn");
     setIsLoggedIn(userLoggedIn);
-  }, []);
+  }, [isLoggedIn]);
 
   const onLogin = () => {
     setIsLoggedIn(true);
@@ -27,7 +27,7 @@ function App() {
       <div className="wrapper">
         <Switch>
           <Route exact path="/login">
-            {isLoggedIn ? (
+            {isLoggedIn === "true" ? (
               <Redirect to="/" />
             ) : (
               <div className="w-full">
@@ -36,7 +36,7 @@ function App() {
             )}
           </Route>
         </Switch>
-        {isLoggedIn ? (
+        {isLoggedIn === "true" ? (
           <>
             <div className="w-60 bg-sidebar rounded-lg justify-center flex">
               <Sidebar />
