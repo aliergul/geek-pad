@@ -18,5 +18,13 @@
   },
   "user": {
     "logout": "Çıkış Yap"
+  },
+  "signup": {
+    "title": "Kayıt ol",
+    "email": "E-posta",
+    "password": "Şifre",
+    "back": "Geri dön",
+    "error": "Kullanıcı adı veya şifre yanlış formatta girildi.",
+    "success": "İşlem başarılı!"
   }
 }

@@ -18,5 +18,13 @@
   },
   "user": {
     "logout": "Logout"
+  },
+  "signup": {
+    "title": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "back": "Back",
+    "error": "Username or password is incorrect format.",
+    "success": "Successfully signed up!"
   }
 }

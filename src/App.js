@@ -9,6 +9,7 @@ import Content from "./components/Content";
 import { useState } from "react";
 import Login from "./pages/Auth/Login";
 import { useEffect } from "react";
+import SignUp from "./pages/Auth/SignUp";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -35,19 +36,24 @@ function App() {
               </div>
             )}
           </Route>
-        </Switch>
-        {isLoggedIn === "true" ? (
-          <>
-            <div className="w-60 bg-sidebar rounded-lg justify-center flex">
-              <Sidebar />
-            </div>
+          <Route exact path="/sign-up">
             <div className="w-full">
-              <Content />
+              <SignUp />
             </div>
-          </>
-        ) : (
-          <Redirect to="/login" />
-        )}
+          </Route>
+          {isLoggedIn === "true" ? (
+            <>
+              <div className="w-60 bg-sidebar rounded-lg justify-center flex">
+                <Sidebar />
+              </div>
+              <div className="w-full">
+                <Content />
+              </div>
+            </>
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Switch>
       </div>
     </Router>
   );
