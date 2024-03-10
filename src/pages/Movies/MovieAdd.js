@@ -1,6 +1,6 @@
 import React from "react";
 
-const MovieAdd = () => {
+const MovieAdd = ({ open }) => {
   return <div>MovieAdd</div>;
 };
 

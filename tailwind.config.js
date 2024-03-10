@@ -9,9 +9,9 @@ module.exports = {
         source: ['"Source Code Pro'],
       },
       colors: {
-        main: "#EDF5E1",
-        sidebar: "#8EE4AF",
-        active: "#5db27f",
+        main: "#F3F5F0",
+        sidebar: "#A495E7",
+        active: "#8877D4",
       },
     },
   },

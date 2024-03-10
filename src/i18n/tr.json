@@ -26,5 +26,10 @@
     "back": "Geri dön",
     "error": "Kullanıcı adı veya şifre yanlış formatta girildi.",
     "success": "İşlem başarılı!"
+  },
+  "movies": {
+    "title": "Film Notları",
+    "description": "Butona basarak bir şeyler eklemeye başlayabilirsin.",
+    "add": "Ekle"
   }
 }
