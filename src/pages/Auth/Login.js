@@ -34,6 +34,7 @@ const Login = ({ onLogin }) => {
         onLogin();
         history.push("/");
         localStorage.setItem("user", JSON.stringify(auth.currentUser));
+        localStorage.setItem("path", "/");
         // ...
       })
       .catch((err) => {

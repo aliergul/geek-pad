@@ -29,7 +29,7 @@ function App() {
         <Switch>
           <Route exact path="/login">
             {isLoggedIn === "true" ? (
-              <Redirect to="/" />
+              <Redirect to={`${localStorage.getItem("path") ?? "/"}`} />
             ) : (
               <div className="w-full">
                 <Login onLogin={onLogin} />

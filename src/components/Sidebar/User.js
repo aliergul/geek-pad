@@ -15,8 +15,8 @@ const User = () => {
     signOut(auth)
       .then(() => {
         localStorage.setItem("isLoggedIn", false);
-        localStorage.clear();
         history.push("/login");
+        localStorage.clear();
         window.location.reload(false);
       })
       .catch((err) => {
