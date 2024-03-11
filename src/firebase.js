@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -9,6 +10,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyBEc9jNAecs9rN4wZEpU-1-nFdVVlMJsAc",
   authDomain: "192.168.6.88:3000",
+  databaseURL: "https://geek-pad-default-rtdb.firebaseio.com",
   projectId: "geek-pad",
   storageBucket: "geek-pad.appspot.com",
   messagingSenderId: "933940019698",
@@ -18,4 +20,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const database = getDatabase(app);
 export default app;
