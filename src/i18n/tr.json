@@ -30,6 +30,11 @@
   "movies": {
     "title": "Film Notları",
     "description": "Butona basarak bir şeyler eklemeye başlayabilirsin.",
-    "add": "Ekle"
+    "modal_description": "İşlemi bitirdikten sonra film hakkındaki notlarını ekleyebilirsin.",
+    "add": "Ekle",
+    "name": "Filmin adı:",
+    "year": "Vizyon Yılı:",
+    "watch": "İzledim",
+    "score": "Skor"
   }
 }

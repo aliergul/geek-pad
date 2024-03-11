@@ -12,7 +12,6 @@ const Movies = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    setOpen(false);
     localStorage.setItem("path", window.location.pathname);
   }, []);
   return (
@@ -38,7 +37,7 @@ const Movies = () => {
           {i18n.t("movies:add")}
         </Button>
       </div>
-      <MovieAdd open={open} />
+      <MovieAdd open={open} setOpen={setOpen} />
       <MovieTable />
     </motion.div>
   );
