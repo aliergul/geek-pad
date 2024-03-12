@@ -25,7 +25,7 @@ const MovieTable = () => {
         console.error(error);
       });
     // eslint-disable-next-line
-  }, []);
+  }, [movies]);
 
   return <div>test</div>;
 };

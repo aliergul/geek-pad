@@ -96,7 +96,12 @@ const MovieAdd = ({ open, setOpen }) => {
                     name="year"
                     control={methods.control}
                     render={({ field }) => (
-                      <TextField size="small" className="w-full" {...field} />
+                      <TextField
+                        type="number"
+                        size="small"
+                        className="w-full"
+                        {...field}
+                      />
                     )}
                   />
                 </div>
@@ -132,6 +137,7 @@ const MovieAdd = ({ open, setOpen }) => {
                     render={({ field }) => (
                       <StyledRating
                         {...field}
+                        value={parseFloat(field.value)}
                         defaultValue={2}
                         max={10}
                         getLabelText={(value) =>

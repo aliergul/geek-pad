@@ -26,5 +26,15 @@
     "back": "Back",
     "error": "Username or password is incorrect format.",
     "success": "Successfully signed up!"
+  },
+  "movies": {
+    "title": "Movie Notes",
+    "description": "You can start adding things by pressing the button.",
+    "modal_description": "Once you're done, you can add your notes about the movie.",
+    "add": "Add",
+    "name": "Name of the movie:",
+    "year": "Release date:",
+    "watch": "Watched",
+    "score": "Score"
   }
 }
