@@ -17,6 +17,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import i18n from "../../i18n/i18n";
 import { database } from "../../firebase";
 import { push, ref, set } from "firebase/database";
+import moment from "moment";
 
 const style = {
   position: "absolute",
@@ -62,6 +63,7 @@ const MovieAdd = ({ open, setOpen }) => {
       year: methods.getValues().year,
       watch: methods.getValues().watch,
       score: methods.getValues().score,
+      inserttime: moment(new Date()).unix(),
     };
     const newMovieRef = push(movieRef);
 

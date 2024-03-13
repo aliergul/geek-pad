@@ -21,7 +21,7 @@ const Movies = () => {
       className="grid justify-center"
     >
       <PageTitle title={i18n.t("movies:title")} />
-      <div className="flex gap-2 mb-2">
+      <div className="flex gap-2 mb-2 justify-center">
         <Description description={i18n.t("movies:description")} />
         <Button
           className="w-fit"
