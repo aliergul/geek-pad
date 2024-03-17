@@ -35,6 +35,17 @@
     "name": "Filmin adı:",
     "year": "Vizyon Yılı:",
     "watch": "İzledim",
-    "score": "Skor"
+    "score": "Skor",
+
+    "table": {
+      "name": "Filmin Adı",
+      "year": "Vizyon Yılı",
+      "watch": "İzlenme",
+      "score": "Skor",
+      "inserttime": "Eklenme Tarihi",
+      "transactions": "İşlemler",
+      "edit": "Düzenle",
+      "delete": "Sil"
+    }
   }
 }
