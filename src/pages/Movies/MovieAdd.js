@@ -10,7 +10,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -33,7 +33,7 @@ const style = {
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
-    color: "#ff6d75",
+    color: "#FF8D92",
   },
   "& .MuiRating-iconHover": {
     color: "#ff3d47",
@@ -46,14 +46,7 @@ const MovieAdd = ({ open, setOpen }) => {
   const [snackbar, setSnackbar] = useState(false);
   const userId = JSON.parse(localStorage.getItem("user"))?.uid;
 
-  const methods = useForm({
-    defaultValues: {
-      name: "",
-      year: "",
-      watch: false,
-      score: 0,
-    },
-  });
+  const methods = useForm();
 
   const onSubmit = (data) => {
     const movieRef = ref(database, `${userId}/movies`);
@@ -76,6 +69,11 @@ const MovieAdd = ({ open, setOpen }) => {
         console.error(err.message);
       });
   };
+  useEffect(() => {
+    if (open) {
+      methods.reset();
+    }
+  }, [open, methods]);
 
   return (
     <>
@@ -89,7 +87,12 @@ const MovieAdd = ({ open, setOpen }) => {
                   name="name"
                   control={methods.control}
                   render={({ field }) => (
-                    <TextField size="small" className="w-full" {...field} />
+                    <TextField
+                      required
+                      size="small"
+                      className="w-full"
+                      {...field}
+                    />
                   )}
                 />
                 <div className="mt-4">
@@ -103,6 +106,13 @@ const MovieAdd = ({ open, setOpen }) => {
                         size="small"
                         className="w-full"
                         {...field}
+                        InputProps={{
+                          inputProps: {
+                            step: 1,
+                            min: 1900,
+                            max: 2030,
+                          },
+                        }}
                       />
                     )}
                   />

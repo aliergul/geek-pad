@@ -1,5 +1,6 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import React from "react";
+import i18n from "../../../i18n/i18n";
 
 const style = {
   position: "absolute",
@@ -13,13 +14,10 @@ const style = {
   p: 4,
 };
 
-const EditModal = ({ open, setOpen }) => {
-  const handleOpen = () => setOpen(true);
+const EditModal = ({ open, setOpen, movie }) => {
   const handleClose = () => setOpen(false);
-
   return (
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+    <>
       <Modal
         open={open}
         onClose={handleClose}
@@ -27,15 +25,15 @@ const EditModal = ({ open, setOpen }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography id="modal-modal-title" variant="h5" component="h2">
+            {i18n.t("movies:edit_title")}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 };
 

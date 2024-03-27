@@ -36,7 +36,10 @@
     "year": "Vizyon Yılı:",
     "watch": "İzledim",
     "score": "Skor",
-
+    "delete_description": "<b>{{movie}}</b> filmini silmek istediğine emin misin? Bu işlemi geri alamazsın...",
+    "delete_title": "Filmi Sil",
+    "edit_title": "Filmi Düzenle",
+    "cancel": "Vazgeç",
     "table": {
       "name": "Filmin Adı",
       "year": "Vizyon Yılı",
